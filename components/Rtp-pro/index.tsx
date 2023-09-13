@@ -277,6 +277,7 @@ export default function Rtppro() {
             role="progressbar"
             aria-valuemin={0}
             aria-valuemax={100}
+            aria-valuenow={0}
           ></div>
         </div>
         <div className="jam flex flex-col justify-between text-center text-black font-bold m-2">
