@@ -275,9 +275,8 @@ export default function Rtppro() {
             id="percent-bar"
             className="percent-bar"
             role="progressbar"
-            aria-valuemin="0"
-            aria-valuemax="100"
-            aria-valuenow=""
+            aria-valuemin={0}
+            aria-valuemax={100}
           ></div>
         </div>
         <div className="jam flex flex-col justify-between text-center text-black font-bold m-2">
