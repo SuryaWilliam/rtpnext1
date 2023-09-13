@@ -3,7 +3,6 @@ import $ from "jquery";
 
 export default function Rtppro() {
   useEffect(() => {
-    // Your provided code starts here
     var x = [
       2987, 74, 2425, 1106, 2562, 2434, 1584, 722, 51, 1480, 200, 115, 2409,
       1083, 1987, 2675, 1166, 462, 704, 2551, 79, 418, 432, 1548, 846, 1613,
@@ -89,8 +88,7 @@ export default function Rtppro() {
       2584, 1187, 25, 331, 1252, 1408, 1481, 2961, 1002, 659, 201, 2252, 1841,
       2240, 1287, 347, 283, 2048, 2138, 2836, 554, 2430, 2234, 2099, 1293, 1392,
       459, 715, 1358, 2136, 1489, 2437, 1469, 2914, 681, 2643, 2072, 111, 1448,
-    ]; // Your array of numbers
-    // ... (rest of the code)
+    ];
 
     var text = document.getElementsByClassName("percent-txt");
     var barr = document.getElementsByClassName("percent-bar");
@@ -176,7 +174,6 @@ export default function Rtppro() {
       }
 
       if (xx >= 30) {
-        // ... (rest of the code)
         var hour2 = (hour + 7) % 24;
         var target = (xx % 3) + 1;
         var randomTarget = (hour2 + target) % 24;
@@ -210,7 +207,6 @@ export default function Rtppro() {
           (x[5 * n2] + xx) % 5,
           (x[6 * n2] + xx) % 5,
         ];
-        // ... (rest of the code)
 
         for (let j = 0; j < 3; j++) {
           for (let k = 0; k < 3; k++) {
@@ -227,7 +223,6 @@ export default function Rtppro() {
         ];
         for (let j = 0; j < 3; j++) {
           if (pola1[j][i]) {
-            // Check if pola1[j][i] exists
             if (random3[p3[j]] === "Auto") {
               pola1[j][i].textContent =
                 random2[p2[j]] + " " + random[p2[j]] + " " + random3[p3[j]];
@@ -240,14 +235,14 @@ export default function Rtppro() {
         if (xx > 70) {
           if (pola[i] && jambg[i]) {
             // Check if pola[i] and jambg[i] exist
-            pola[i].style.backgroundColor = "#28a745";
-            jambg[i].style.backgroundColor = "#28a745";
+            (pola[i] as HTMLElement).style.backgroundColor = "#28a745";
+            (jambg[i] as HTMLElement).style.backgroundColor = "#28a745";
           }
         } else {
           if (pola[i] && jambg[i]) {
             // Check if pola[i] and jambg[i] exist
-            pola[i].style.backgroundColor = "#ffc107";
-            jambg[i].style.backgroundColor = "#ffc107";
+            (pola[i] as HTMLElement).style.backgroundColor = "#ffc107";
+            (jambg[i] as HTMLElement).style.backgroundColor = "#ffc107";
           }
         }
       } else {
@@ -257,8 +252,8 @@ export default function Rtppro() {
         }
         if (pola[i] && jambg[i]) {
           // Check if pola[i] and jambg[i] exist
-          pola[i].style.backgroundColor = "#dc3545";
-          jambg[i].style.backgroundColor = "#dc3545";
+          (pola[i] as HTMLElement).style.backgroundColor = "#dc3545";
+          (jambg[i] as HTMLElement).style.backgroundColor = "#dc3545";
         }
         if (pola1[1][i]) {
           // Check if pola1[1][i] exists
