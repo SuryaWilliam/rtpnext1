@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import $ from "jquery";
 
 export default function Rtppro() {
@@ -86,26 +87,22 @@ export default function Rtppro() {
     459, 715, 1358, 2136, 1489, 2437, 1469, 2914, 681, 2643, 2072, 111, 1448,
   ];
 
-  const text = document.getElementsByClassName("percent-txt");
-  const barr = document.getElementsByClassName("percent-bar");
-  const jam = document.getElementsByClassName("jamgacorRange");
-  const pola1: [
-    HTMLCollectionOf<Element>,
-    HTMLCollectionOf<Element>,
-    HTMLCollectionOf<Element>
-  ] = [
+  var text = document.getElementsByClassName("percent-txt");
+  var barr = document.getElementsByClassName("percent-bar");
+  var jam = document.getElementsByClassName("jamgacorRange");
+  var pola1 = [
     document.getElementsByClassName("pola1"),
     document.getElementsByClassName("pola2"),
     document.getElementsByClassName("pola3"),
   ];
-  const pola = document.getElementsByClassName("pola");
-  const jambg = document.getElementsByClassName("jamgacor");
+  var pola = document.getElementsByClassName("pola");
+  var jambg = document.getElementsByClassName("jamgacor");
 
-  const random: string[] = ["✖️", "✔️", "✖️", "✔️", "✖️", "✔️"];
+  var random = ["✖️", "✔️", "✖️", "✔️", "✖️", "✔️"];
 
-  const random2: number[] = [10, 25, 50, 100, 10];
+  var random2 = [10, 25, 50, 100, 10];
 
-  const random3: string[] = [
+  var random3 = [
     "Auto",
     "Auto",
     "Manual 3",
@@ -120,26 +117,26 @@ export default function Rtppro() {
     "Auto",
   ];
 
-  const game = window.location.pathname;
+  var game = window.location.pathname;
 
   if (game == "/pragmatic" || game == "/pragmatic") {
     game = "";
   }
 
-  let xxx = 0;
+  var xxx = 0;
 
   for (let i = 0; i < game.length; i++) {
     xxx += game.charCodeAt(i);
   }
 
   const d = new Date();
-  let date = d.getUTCDate();
-  const day = d.getUTCDay() + 1;
-  const year = d.getUTCFullYear();
-  const month = d.getUTCMonth() + 1;
-  const hour = d.getUTCHours();
-  let min = d.getMinutes();
-  let xx = day + year * month * date;
+  var date = d.getUTCDate();
+  var day = d.getUTCDay() + 1;
+  var year = d.getUTCFullYear();
+  var month = d.getUTCMonth() + 1;
+  var hour = d.getUTCHours();
+  var min = d.getMinutes();
+  var xx = day + year * month * date;
 
   for (let i = 0; i < text.length; i++) {
     // ... (rest of the code)
@@ -159,8 +156,8 @@ export default function Rtppro() {
       xx = xx % 83;
       xx += 8;
     }
-    const percentTxt = text[i];
-    const bar = barr[i];
+    var percentTxt = text[i];
+    var bar = barr[i];
     percentTxt.innerHTML = xx + "%";
     $(barr[i])
       .attr("aria-valuenow", xx)
@@ -174,14 +171,14 @@ export default function Rtppro() {
     }
 
     if (xx >= 30) {
-      const hour2 = (hour + 7) % 24;
-      const target = (xx % 3) + 1;
-      let randomTarget = (hour2 + target) % 24;
+      var hour2 = (hour + 7) % 24;
+      var target = (xx % 3) + 1;
+      var randomTarget = (hour2 + target) % 24;
       if (randomTarget < 10) {
         randomTarget = 0 + randomTarget;
       }
-      const min1 = xx % 60;
-      let min2 = (xx * date) % 60;
+      var min1 = xx % 60;
+      var min2 = (xx * date) % 60;
       if (min1 < 10) {
         min1 = 0 + min1;
       }
@@ -198,11 +195,11 @@ export default function Rtppro() {
           hour2 + ":" + min1 + " - " + randomTarget + ":" + min2;
       }
 
-      const n = i % 6;
-      const p = [(x[n] + xx) % 6, (x[2 * n] + xx) % 6, (x[3 * n] + xx) % 6];
+      var n = i % 6;
+      var p = [(x[n] + xx) % 6, (x[2 * n] + xx) % 6, (x[3 * n] + xx) % 6];
 
-      const n2 = i % 5;
-      const p2 = [
+      var n2 = i % 5;
+      var p2 = [
         (x[4 * n2] + xx) % 4,
         (x[5 * n2] + xx) % 5,
         (x[6 * n2] + xx) % 5,
@@ -216,7 +213,7 @@ export default function Rtppro() {
         }
       }
 
-      const p3 = [
+      var p3 = [
         Math.pow(p[0], p2[0]) % 12,
         Math.pow(p[1], p2[1]) % 12,
         Math.pow(p[2], p2[2]) % 12,
